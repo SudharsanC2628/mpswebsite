@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const serverless = require('serverless-http');
 const app = express();
 const PORT = process.env.PORT || 5000;
-//const cors = require('cors');
+const cors = require('cors');
 const router = express.Router();
 //replace the link with your mongodb atlas link
 // mongoose.connect('your_mongodb_url',
@@ -99,8 +99,8 @@ const seedDatabase = async () =>
 //seedDatabase();
 
 // Define API endpoint for fetching all products
-//router.get('/api/products', async (req, res) =>
-app.get('/products', async (req, res) =>
+router.get('/api/products', async (req, res) =>
+//app.get('/products', async (req, res) =>
 {
     try {
         //// Fetch all products from the database
